@@ -6,7 +6,7 @@ with orders as (
         order_date,
         status
 
-    from ab_devpayconstruct.orders
+    from {{ source('ab_devpayconstruct', 'orders') }}
 
 )
 

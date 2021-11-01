@@ -4,9 +4,9 @@ with payments as (
     orderid as order_id,
     paymentmethod as payment_method,
     status,
-    amount / 100 as amount,
+    {{ cents_to_dollars('amount', 4) }} as amount,
     created
-    from meltano_dpc.payment
+    from {{source('meltano_devpc','payment')}}
 )
 
 select * from payments

@@ -5,7 +5,7 @@ with customers as (
         first_name,
         last_name
 
-    from ab_devpayconstruct.customers
+    from {{ source('ab_devpayconstruct', 'customers') }}
 
 )
 
